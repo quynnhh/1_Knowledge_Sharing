@@ -1,0 +1,84 @@
+/***************
+ * Git Command *
+ ***************/
+1. Initalize a respository: git init
+2. Cloning an Exiting Repository: git clone <address> <new_name>
+3. Status
+ |_ Git status
+ |_ Git status -s or --short : short-form (??:untracked file, M:modified, A: add, MM )
+
+4. Add
+ |_ Git add
+5. Ignore file (don't want to show untracked file).
+ |_ Create .gitignore
+   /* Ex: # ignore all .a files
+   	  *.a
+	  # but do track lib.a, even though you're ignorign .a file above
+	  !lib.a
+	  # only ignore the TODO file in the current directory, not subdir/TODO
+	  /TODO
+	  # ignore all files in any directory named build
+	  build/
+	  # ignore doc/notes.txt, but not doc/server/arch.txt
+	  doc/*.txt
+	  # ignore all .pdf file in the doc/ directory and any of its subdirectoris
+	  doc/**/*.pdf
+6. Remove file
+ |_ git rm : remove file from your tracked file and then commit, also in your directory
+ |_ git rm -f : remove if file in staged area.
+ |_ git rm --cached or using .gitignore : remove from staging area.
+ |_ git rm log/\*.log : remove all file have .log.
+ |_ git rm \*~ : remove all file whose names end with ~.
+7. Moving file of Rename
+ |_ git mv file_from file_to 
+ |_ git mv a.txt a : rename a.txt to a.This is equivalent to mv a.txt a -> git rm a.txt -> git add a.
+8. View commit history
+ |_ git log
+ |	    -p : show the difference
+ |          --patch : show the difference
+ |          --state : show statistics of files
+ |          --shortstate : display only the changed
+ | 	    --graph : 
+ | 	    --pretty : show commit in an alternate format.
+ |	    --oneline : ~= --pretty=oneline --abbrev-commit
+ | 	    --abbrev-commit : show only a few charater of SHA
+ | 	    --name-only : show the list of files modified after commit
+ | 	    --name-status : show the list of files affected with added/modified.
+ |	    -<n> : show only the last n commits.
+ |	    --author : only show commit in which author entry matches the specified string
+ |	    --committer : only show commit in which committer entry matches the specified string
+ |	    --grep : only show commits with a commit message containing the str.
+ | 	    --S : only show commits adding or removing code matching the str.
+ |	    --decorate : show pointer.
+9. Undo things, files
+ |_ git commit --amend : undo commit.
+10. Unstaging a staged file
+ |_ git reset HEAD <file>
+11. Unmodified a modified file.
+ |_ git checkout -- <file>
+12. Remote Res
+ |_ git remote : show remotes servers
+ |	       -v : shows remotes servers with its URLs
+ |_ git remote add <shortname> <url> : add new remote server. Note: <shortname> can be used instend of url. ex: git fetch <shortname>
+ |_ git fetch <remote> : fetch remote server.
+ |_ git push <remote> <branch> : push branch to remote server.
+ |_ git remote show <remote> : show particular information for a remote server.
+ |_ git remote rename <oldname> <newname> : rename remote server.
+ |_ git remote remove <shortname> : remove remote server.
+13. Tagging.
+ |_ git tag : list all tags.
+ |_ git tag -l "string" : list all tags whose name contains that string.
+ |_ git tag -a <name> -m "Message" : create a tag with Message (full metadata).
+ |_ git show <tagname> : show information about tag.
+ |_ git tag <tagname> : create tags just contain checksum information.
+ |_ git tag -a <name> <commit> : create a tag for a specific commit.
+ |_ git push <shortnameremote> <tagname> : push a specific tag.
+ |_ git push <shortnameremote> --tags : push all tags.
+ |_ git tag -d <tagname> : delete a tag.
+ |_ git push <remote> --delete <tagname> : delete remote tag.
+ |_ git push <remote> :refs/tags/<tagname> : delete remote tag.
+ |_ git checkout <tagname> : checkout a tag.
+14. Aliases.
+ |_ git config --global alias.co checkout
+15. Branch.
+

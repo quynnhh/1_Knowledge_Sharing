@@ -1,0 +1,14 @@
+/********************************
+ * Version Control System (VCS) *
+ ********************************/
+_ Definition: VCS is a system that records the changes to a file or set of files over time.
+_ Type: Version Control System (VCS)
+ |_ Local Version Cotrol Systems (Ex: ): The database that kept all the changes to files is
+ |					 in your computer.
+ |_ Certralized Version Control Systems: The system has a single server that contains all the
+ |					 versiond files, and a number of clients that check out
+ |					 out files from that central place.
+ |_ Distributed Version Control Systems: The system has a single server and the clients don't 
+ |					 just checkout the latest snapshot of the files, rather,
+ |					 they fully mirror the repository, including its history.
+ss

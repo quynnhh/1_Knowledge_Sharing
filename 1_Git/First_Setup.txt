@@ -1,0 +1,16 @@
+/*******************
+ * Setup envirment *
+ *******************/
+_ Configuration variables (git config) are stored in three places.
+ |_ /etc/gitconfig (option --system): contains variables applied to every users on the system and their repositories.
+ |_ ~/.gitconfig or ~/.config/git/config (option --global): variable specific personally to you, the user, affects all of the repositories you work with on systems.
+ |_ config file (.git/config, option --local): variables for current repository.
+_ Identified yourself
+ |_ git config --global user.name ""
+ |_ git config --global user.email ""
+_ Identified editor
+ |_ git config --global core.editor emacs
+_ Checking setting
+ |_ git config --list
+ |_ git config <key> : check specific key
+ |_ git config --show-origin
